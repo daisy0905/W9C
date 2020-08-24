@@ -58,13 +58,21 @@ var tweetTopic = [
     }
 ]
 
-var arrayLength = tweetTopic.length;
-
-for(var counter = 0; counter < tweetTopic.length; counter++) {
-    number = counter + 1;
-    console.log("No." + number);
-    console.log("The tweet content:" + tweetTopic[counter].tweet + ";");
-    console.log("the author:" + tweetTopic[counter].username + ";");
-    console.log("Created at " + tweetTopic[counter].created_at + ".")
+function filterAge(user) {
+    if(user.age >= 18) {
+        return true;
+    } else {
+        console.log("Error!")
+    }
 }
-   
+
+for (var i=0; i < tweetTopic.length; i++) {
+    if (filterAge(tweetTopic[i]) === true) {
+        console.log(tweetTopic[i].age);
+        console.log(filterAge(tweetTopic[i]));
+    }
+}
+
+var userList = tweetTopic.filter(filterAge);
+console.log(userList);
+
