@@ -62,14 +62,7 @@ function filterAge(user) {
     if(user.age >= 18) {
         return true;
     } else {
-        console.log("Error!")
-    }
-}
-
-for (var i=0; i < tweetTopic.length; i++) {
-    if (filterAge(tweetTopic[i]) === true) {
-        console.log(tweetTopic[i].age);
-        console.log(filterAge(tweetTopic[i]));
+        return false;
     }
 }
 
